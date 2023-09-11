@@ -116,7 +116,7 @@ p {
 
 .principle-p {
     font-family: 'Inter', sans-serif;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 12px; 
     text-align: center;
     line-height: 18px;
@@ -126,8 +126,24 @@ p {
     display: flex;
 }
 
-#na-section-title {
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    text-transform: capitalize;
+    /* font-variant: small-caps; */
+    text-align: left;
+}
 
+#na-section-title {
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 20px;
+    width: 25%;
+    margin-right: 50px;
+}
+
+#new-arrivals-products{
+    display: flex;
 }
 
 a {
@@ -144,5 +160,5 @@ a {
 }
 
 .product-image {
-    width: 120px;
+    width: 20px;
 }
