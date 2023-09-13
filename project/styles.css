@@ -4,8 +4,14 @@
     padding: 0;
 }
 
+:root {
+    --cream: #f8f5f3;
+    --black: #000000;
+    --dark-cream: #A89C93;
+}
+
 #header {
-    background-color: #f8f5f3;
+    background-color: var(--cream);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,8 +19,8 @@
 }
 
 #preheader {
-    background-color: #000000;
-    color: #f8f5f3;
+    background-color: var(--black);
+    color: var(--cream);
     padding: 0.5%;
     width: 100%;
     margin: auto;
@@ -24,7 +30,7 @@
 
 #header-menu {
     padding: 0.5%;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid var(--black);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -57,7 +63,7 @@ h1 {
 }
 
 #main-claim {
-    background-color: #f8f5f3;
+    background-color: var(--cream);
     padding: 5% 5% 0 5%;
 }
 
@@ -160,7 +166,7 @@ a {
     font-weight: 400;
     letter-spacing: 1px;
     text-decoration: underline;
-    color: #000000;
+    color: var(--black);
 }
 
 .product-image {
@@ -184,8 +190,8 @@ a {
 }
 
 #filter-menu {
-    background-color: #f8f5f3;
-    padding: 5%;
+    background-color: var(--cream);
+    padding: 2%;
 }
 
 .filter-button{
@@ -198,7 +204,7 @@ a {
     font-weight: 400;
     letter-spacing: 1px;
     text-decoration: underline;
-    color: #000000;
+    color: var(--black);
     border-style: none;
     background-color: transparent;
 }
@@ -210,4 +216,20 @@ a {
     text-align: left;
     line-height: 18px;
     text-transform: uppercase;
+}
+
+.filter-element {
+    list-style: none;
+}
+
+.filter-element button {
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Playfair Display;
+    font-size: 31.863px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    border: none;
 }
