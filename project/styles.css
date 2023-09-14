@@ -60,6 +60,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 1px;
+    max-width: 300px;
 }
 
 #main-claim {
@@ -283,3 +284,104 @@ gap: 50px;
 .price {
     text-align: right;
 }
+
+#text-n-images {
+    background-color: var(--cream);
+}
+
+#text-n-images > p {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-style: italic;
+    text-transform: capitalize;
+    line-height: 85px;
+}
+
+.p-span {
+    display:inline-block;
+    width: 300px;
+    border-radius: 100px;
+}
+
+#span-image {
+    width: 10px;
+}
+
+footer {
+    background-color: var(--black);
+    padding: 5%;
+}
+
+#footer-claim {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 48px;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--cream);
+}
+
+#footer-claim button {
+    padding: 1.5% 3%;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid var(--cream);
+    color: var(--cream);
+}
+
+#footer-links {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: solid 1px var(--dark-cream);
+    border-bottom: solid 1px var(--dark-cream);
+}
+
+#subscribe-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#subscribe-group > p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px; 
+    text-align: left;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+}
+
+#privacy-confirmation  p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px; 
+    text-align: left;
+    line-height: 18px;
+    /* text-transform: uppercase; */
+    margin: 15px 0;
+    letter-spacing: 0.75px;
+    color: var(--dark-cream);
+}
+
+#subscribe-group > p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px; 
+    text-align: left;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    letter-spacing: 0.75px;
+    color: var(--dark-cream);
+}
+
