@@ -4,10 +4,19 @@
     padding: 0;
 }
 
+::selection{
+	background: #E7FF0F;
+	color: black;
+
+}
+
+
 :root {
     --cream: #f8f5f3;
     --black: #000000;
     --dark-cream: #A89C93;
+    --lime: #E7FF0F;
+    --transition-time: .3s;
 }
 
 #header {
@@ -29,7 +38,7 @@
 }
 
 #header-menu {
-    padding: 0.5%;
+    padding: 1%;
     border-bottom: 1px solid var(--black);
     width: 100%;
     display: flex;
@@ -61,13 +70,13 @@ h1 {
     font-weight: 500;
     letter-spacing: 1px;
     max-width: 300px;
-    transition: .7s;
+    transition: var(--transition-time);
 }
 .button-a:hover{
     cursor: pointer;
-    background-color: #A89C93;
-    border: 1px solid white;
-    color: white;
+    background-color: var(--lime);
+    border: 1px solid black;
+    color: black;
     
 }
 
@@ -75,6 +84,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-bottom: 5%;
 }
 #main-claim {
     background-color: var(--cream);
@@ -171,7 +181,7 @@ h2 {
 
 #new-arrivals-products{
     display: flex;
-    gap: 25px;
+    gap: 35px;
     max-width: 75%;
 }
 
@@ -219,7 +229,7 @@ a {
 
 #filter-menu {
     background-color: var(--cream);
-    padding: 50px;
+    padding: 5%;
     /* width: 1000px; */
     min-width: 420px;
     height: 100%;
@@ -243,7 +253,7 @@ a {
     border-style: none;
     background-color: transparent;
     padding: 2%;
-    transition: .5s;
+    transition: var(--transition-time);
 }
 
 .filter-button:hover{
@@ -296,7 +306,7 @@ a {
     background-color: transparent;
     border: transparent;
     margin: 10px 50px 10px 0;
-    width: 20%;
+    width: 30%;
 }
 
 #price-input ::after {
@@ -380,14 +390,14 @@ footer h3 {
 }
 #footer-claim button:hover{
     cursor: pointer;
-    background-color: #A89C93;
+    background-color: var(--lime);
     border: 1px solid white;
-    color: white;
+    color: black;
 }
 
 #footer-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 40px;
     margin-top: 40px;
@@ -438,6 +448,49 @@ footer h3 {
     color: var(--dark-cream);
 }
 
+.subscribe > input{
+    background-color: transparent;
+    border: 1px solid var(--dark-cream);
+    color: var(--dark-cream);
+    padding: 2%;
+}
+
+.subscribe-button{
+    font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: left;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  color: var(--dark-cream);
+  border-style: none;
+  background-color: transparent;
+  padding: 2%;
+  transition: .5s;
+}
+
+.subscribe-button:hover{
+    cursor: pointer;
+    transform: translateY(-8px);
+}
+
+.link-element-footer:hover{
+    cursor: pointer;
+    color: var(--lime);
+}
+
+#footer-end{
+    padding-top: 10px;
+}
+
+.moona img{
+    width: 15%;
+    padding: 0 1.2%;
+}
+
 #links-group {
     display: flex;
     align-items: center;
@@ -448,6 +501,7 @@ footer h3 {
     list-style: none;
     display: inline-block;
     margin: 20px 0 20px 20px;
+    transition: var();
 }
 
 .link-element-footer {
@@ -463,6 +517,12 @@ footer h3 {
 #privacy-terms {
     display: flex;
     flex-direction: row;
+
+}
+
+#privacy-terms a:hover{
+    cursor: pointer;
+    color: var(--lime);
 }
 
 #privacy-terms a {

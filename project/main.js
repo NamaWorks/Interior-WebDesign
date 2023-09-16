@@ -75,4 +75,53 @@ const products = [
         image: './assets/img/product-img/minimal-n-modern-chairs/pexels-vecislavas-popa-1571463.jpg',
     },
     // Outdoor Decor
-]
+    {
+        name: 'Jonathan Set',
+        price: 1470,
+        category: 'Outdoor Decor',
+        image: './assets/img/product-img/outdoor-decor/pexels-jonathan-borba-3255245.jpg',
+    },
+    {
+        name: 'Ksenia Set',
+        price: 2190,
+        category: 'Outdoor Decor',
+        image: './assets/img/product-img/outdoor-decor/pexels-ksenia-chernaya-3951746.jpg',
+    },
+    {
+        name: 'Leelo Set',
+        price: 830,
+        category: 'Outdoor Decor',
+        image: './assets/img/product-img/outdoor-decor/pexels-leeloo-thefirst-8210482.jpg',
+    },
+    {
+        name: 'Claire Set',
+        price: 430,
+        category: 'Outdoor Decor',
+        image: './assets/img/product-img/outdoor-decor/pexels-rachel-claire-5490356.jpg',
+    },
+    //Minimal & modern chairs
+    {
+        name: 'Charlotte Set',
+        price: 430,
+        category: 'Minimal & modern chairs',
+        image: './assets/img/product-img/trendy-sofa-set/pexels-charlotte-may-5824901.jpg',
+    },
+    {
+        name: 'May Set',
+        price: 700,
+        category: 'Minimal & modern chairs',
+        image: './assets/img/product-img/trendy-sofa-set/pexels-charlotte-may-5825720.jpg',
+    },
+    {
+        name: 'Maksim Set',
+        price: 390,
+        category: 'Minimal & modern chairs',
+        image: './assets/img/product-img/trendy-sofa-set/pexels-maksim-goncharenok-4352247.jpg',
+    },
+    {
+        name: 'Shirin Set',
+        price: 660,
+        category: 'Minimal & modern chairs',
+        image: './assets/img/product-img/trendy-sofa-set/pexels-shirin-olyaei-2986011.jpg',
+    },
+];
