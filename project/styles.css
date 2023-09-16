@@ -7,7 +7,6 @@
 ::selection{
 	background: #E7FF0F;
 	color: black;
-
 }
 
 
@@ -181,8 +180,10 @@ h2 {
 
 #new-arrivals-products{
     display: flex;
-    gap: 35px;
+    justify-content: space-between;
+    gap: 5px;
     max-width: 75%;
+
 }
 
 a {
@@ -198,10 +199,36 @@ a {
     color: var(--black);
 }
 
-.product-image {
+.product{
     width: 250px;
     height: 300px;
+    position: relative;
+}
+
+.product:hover{
+    cursor: pointer;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+}
+.mascara{
+    width: 100%;
+    height: 0px;
+    background-color: var(--lime);
+    transition: .5s cubic-bezier(0,.17,0,1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+    mix-blend-mode: color;
+}
+
+.product:hover .mascara{
+    height: 300px;
 }
 
 .product-info {
@@ -357,7 +384,11 @@ gap: 50px;
     height: 120px;
     object-fit: cover;
     border-radius: 150px;
+    transition: 1s cubic-bezier(.81,0,.16,.98);
 } 
+.p-span img:hover{
+    transform: rotate(-10deg);
+}
 
 footer {
     background-color: var(--black);
@@ -409,7 +440,7 @@ footer h3 {
 #subscribe-group {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 35%;
     /* margin: 0 50px 40px 0; */
     border-right: solid 0.5px var(--dark-cream);
     padding-right: 40px;
@@ -422,7 +453,6 @@ footer h3 {
     gap: 10px;
     margin: 10px 0;
 }
-
 
 #privacy-confirmation  p {
     font-family: 'Inter', sans-serif;
@@ -491,17 +521,18 @@ footer h3 {
     padding: 0 1.2%;
 }
 
-#links-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
 .li-element-footer {
     list-style: none;
     display: inline-block;
     margin: 20px 0 20px 20px;
     transition: var();
+}
+#link-list{
+    display: flex;
+    justify-content: space-between;
+}
+#links-group{
+    width: 55%;
 }
 
 .link-element-footer {
@@ -533,3 +564,180 @@ footer h3 {
 }
 
 
+/* 
+Aquí empiezan las media queries 
+*/
+
+@media screen and (max-width:1600px){
+    #filter-products{
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        gap: 50px;
+    }
+}
+
+
+@media screen and (max-width:950px){
+    
+    .sections{
+        padding: 4%;
+    }
+
+
+
+    #main-claim{
+        flex-direction: column;
+
+    }
+    #main-claim-texts{
+        justify-content: center;
+        align-items: center;
+    }
+    #main-claim-texts h1{
+        font-size: 70px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    #main-claim-images{
+        justify-content: center;
+    }
+    .button-a{
+        font-size: 12px;
+    }
+
+
+
+    .principle-h3{
+        font-size: 25px;
+    }
+
+
+
+    #new-arrivals-products{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+
+    /* Products */
+    #products-filter{
+        flex-direction: column;
+        padding-right: 0;
+    }
+    #filter-menu{
+        width: 100%;
+        margin: 0;
+        padding: 4%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+
+    }
+    #price-filter input{
+        margin: 5px;
+    }
+
+    #filter-products{
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        gap: 50px;
+    }
+    .product{
+        width: 230px;
+        height: 280px;
+    }
+    .product:hover .mascara{
+        height: 280px;
+    }
+
+
+    #text-n-images > p{
+        font-size: 45px;
+        line-height: 80px;
+    }
+    .p-span img{
+        height: 90px;
+    }
+
+
+
+    #footer-claim h3{
+        font-size: 30px;
+    }
+    .link-element-footer{
+        font-size: 12px;
+    }
+
+    .li-element-footer{
+        margin-bottom: 0.3px;
+    }
+
+    #link-list{
+        flex-direction: column;
+    }
+    #subscribe-group{
+        width: 90%;
+    }
+    
+}
+
+/* Movil */
+
+@media screen and (max-width:480px){
+
+
+    #main-claim-texts h1{
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 50px;
+    }
+    #mc-image-01{
+        width: 150px;
+        margin-right: -50px;
+        z-index: 300;
+    }
+    .main-claim-image{
+        width: 80%;
+    }
+
+
+
+    #section-principles{
+        flex-direction: column;
+        padding: 5%;
+    }
+    .principle-h3{
+        font-size: 30px;
+    }
+
+
+
+
+    #new-arrivals{
+        flex-direction: column;
+    }
+    #na-section-title{
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    #na-section-title p {
+        text-align: center;
+    }
+
+
+
+
+    #filter-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
