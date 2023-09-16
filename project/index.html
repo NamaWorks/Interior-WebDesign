@@ -26,15 +26,18 @@
             <img id="interior-logo" src="" alt=".Interior-logo">
         </div>
     </header>
-
+ 
     <section class="sections" id="main-claim">
         <div id="main-claim-texts">
             <h1>We offer you <br> the best home decor products & items <br> for a dream home</h1>
             <button class="button-a">Explore our products</button>
         </div>
         <div id="main-claim-images">
-            <img class="main-claim-image" id="mc-image-01" src="./assets/img/pexels-jonathan-borba-5570224.jpg"
+            <div class="main-claim-img">
+                <img class="main-claim-image" id="mc-image-01" src="./assets/img/pexels-jonathan-borba-5570224.jpg"
                 alt="arch-image-01">
+            </div>
+            
             <img class="main-claim-image" src="./assets/img/pexels-jonathan-borba-5570224.jpg" alt="arch-image-02">
         </div>
     </section>
@@ -62,7 +65,7 @@
             <h2>New Arrivals</h2>
             <p>We’ve designed and curated pieces that are a cut above your average home goods, because when you level up
                 your everyday objects, you elevate your daily rituals.</p>
-            <a href="">View All</a>
+            <button class="filter-button">VIEW ALL</button>
         </div>
 
         <div id="new-arrivals-products">
@@ -105,13 +108,16 @@
         <div id="filter-menu">
             <div id="category-filter" class="filter-menu-element">
                 <p class="filter-name">Category:</p>
-                <ul>
-                    <li class="filter-element"><button>Trendy sofa set</button></li>
-                    <li class="filter-element"><button>Minimal & modern chairs</button></li>
-                    <li class="filter-element"><button>Accessories for the room</button></li>
-                    <li class="filter-element"><button>Kitchen items</button></li>
-                    <li class="filter-element"><button>Outdoor decor</button></li>
-                </ul>
+                <section>
+                    <select name="Select-Category" id="select-category">
+                        <option value="all-elements" class="filter-element">All Elements</option>
+                        <option value="Trendy sofa set" class="filter-element">Trendy sofa set</option>
+                        <option value="Minimal & modern chairs" class="filter-element">Minimal & modern chairs</option>
+                        <option value="Accessories for the room" class="filter-element">Accessories for the room</option>
+                        <option value="Kitchen items" class="filter-element">Kitchen items</option>
+                        <option value="Outdoor decor" class="filter-element">Outdoor decor</option>
+                    </select>
+                </section>
             </div>
             <div id="price-filter" class="filter-menu-element">
                 <p class="filter-name">Price:</p>
@@ -289,6 +295,7 @@
 
     </footer>
 
+    <script src="./main.js"></script>
 </body>
 
 </html>
