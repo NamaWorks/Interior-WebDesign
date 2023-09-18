@@ -148,11 +148,13 @@ const products = [
 
 // --------------
 
+//! Product template
+
 const getProductTemplate = (product) => {
     return `
     <div class="product">
-        <a href="${product.link}"><img class="product-image" src="${product.image}" alt="${product.name}"></a>
-        <a href="${product.link}"><div class="mascara"></div></a>
+        <a href="${product.link}" target="_blank"><img class="product-image" src="${product.image}" alt="${product.name}"></a>
+        <a href="${product.link}" target="_blank"><div class="mascara"></div></a>
         <div class="product-info">
             <p class="name">${product.name}</p>
             <p class="category">${product.category}</p>
@@ -162,6 +164,8 @@ const getProductTemplate = (product) => {
 }
 
 // --------------
+
+//! New Arrivals section
 
 const getNewArrivalsProducts = (arr) => {
     const newArrivals = arr.slice((arr.length - 4), arr.length);
@@ -174,11 +178,12 @@ const addNewArrivalsToHTML = (arr) => {
     let newArrivalsDiv = document.getElementById('new-arrivals-products');
     newArrivalsDiv.innerHTML += getProductTemplate(product);
     }
-}
+};
 addNewArrivalsToHTML(newArrivalsProducts);
 
-
 // --------------
+
+//! Product filter section
 
 const categorySelector = document.getElementById('select-category');
 const categorySelection = categorySelector.options[categorySelector.selectedIndex];
@@ -186,22 +191,20 @@ const selectedCat = categorySelection.text;
 
 const priceSelector = document.querySelector('#price-input');
 const priceSelection = priceSelector.value;
-const selectedPrice = priceSelection.number;
 
 const filteredProductsDiv = document.getElementById('filter-products');
 
-const categoryFilteredArray = [];
-
-const productsFilteredByCat = (arr) => {
+const filteredArray = [];
+const filterProducts = (arr) => {
     arr.forEach(product => {
-        if(product.category === selectedCat){
-            // filteredProductsDiv.innerHTML += getProductTemplate(product)
-            categoryFilteredArray.push(product)
+        if(product.price <= priceSelection && product.category === selectedCat){
+            filteredArray.push(product)
+        } else if(priceSelection >= product.price && selectedCat === "All Categories") {
+            filteredArray.push(product)
         }
     })
 };
-productsFilteredByCat(products)
-//! Create same filter for price and searh button activation. Then compare the filtered arrays and add them to the filtered product part
+
 const addFilteredToHTML = (arr) => {
     for(i=0; i<arr.length; i++){
     let product = arr[i];
@@ -209,8 +212,21 @@ const addFilteredToHTML = (arr) => {
     }
 }
 
-addFilteredToHTML(categoryFilteredArray)
-
-
 // --------------
 
+//! Search Button
+
+const searchButton = document.querySelector('#search-button')
+
+//? Tenemos que evitar que al clickar vuelvan a aparecer los elementos de la lista repetidos, quizás podríamos hacer una función dentro de filterProducts()
+
+//? Tenemos que hacer que si en el input price no ponemos nada no exista un price
+
+//? Preparar el botón clear filters
+
+const onSearchButtonClicked = () => {
+    filterProducts(products);
+    addFilteredToHTML(filteredArray);
+}
+
+searchButton.addEventListener('click', onSearchButtonClicked)
