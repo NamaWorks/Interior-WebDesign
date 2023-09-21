@@ -186,8 +186,8 @@ addNewArrivalsToHTML(newArrivalsProducts);
 //! Product filter section
 
 const categorySelector = document.getElementById('select-category');
-const categorySelection = categorySelector.options[categorySelector.selectedIndex];
-const selectedCat = categorySelection.text;
+// const categorySelection = categorySelector.options[categorySelector.selectedIndex];
+// const selectedCat = categorySelection.text;
 
 const priceSelector = document.querySelector('#price-input');
 const priceSelection = priceSelector.value;
@@ -197,13 +197,19 @@ const filteredProductsDiv = document.getElementById('filter-products');
 const filteredArray = [];
 const filterProducts = (arr) => {
     arr.forEach(product => {
-        if(product.price <= priceSelection && product.category === selectedCat){
-            filteredArray.push(product)
-        } else if(priceSelection >= product.price && selectedCat === "All Categories") {
-            filteredArray.push(product)
-        }
-    })
-};
+    //     if(product.price <= priceSelection && product.category === selectedCat){
+    //         filteredArray.push(product)
+    //     } else if(priceSelection >= product.price && selectedCat === "All Categories") {
+    //         filteredArray.push(product)
+    //     }
+    // })
+    console.log(categorySelector.value);
+    if(product.category === categorySelector.value) {
+        filteredArray.push(product)
+    }
+})
+console.log(filteredArray);
+}
 
 const addFilteredToHTML = (arr) => {
     for(i=0; i<arr.length; i++){
@@ -217,12 +223,6 @@ const addFilteredToHTML = (arr) => {
 //! Search Button
 
 const searchButton = document.querySelector('#search-button')
-
-//? Tenemos que evitar que al clickar vuelvan a aparecer los elementos de la lista repetidos, quizás podríamos hacer una función dentro de filterProducts()
-
-//? Tenemos que hacer que si en el input price no ponemos nada no exista un price
-
-//? Preparar el botón clear filters
 
 const onSearchButtonClicked = () => {
     filterProducts(products);
