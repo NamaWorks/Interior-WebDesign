@@ -186,8 +186,6 @@ addNewArrivalsToHTML(newArrivalsProducts);
 //! Product filter section
 
 const categorySelector = document.getElementById('select-category');
-// const categorySelection = categorySelector.options[categorySelector.selectedIndex];
-// const selectedCat = categorySelection.text;
 
 const priceSelector = document.querySelector('#price-input');
 const priceSelection = priceSelector.value;
@@ -211,12 +209,13 @@ const filterProducts = (arr) => {
 console.log(filteredArray);
 }
 
-const addFilteredToHTML = (arr) => {
-    for(i=0; i<arr.length; i++){
-    let product = arr[i];
-    filteredProductsDiv.innerHTML += getProductTemplate(product);
-    }
+
+//! Vamos a crear una función en la que introduzcamos un array de objectos y la función coja cada objecto, saque el HTML template y lo añada como texto a una variable que luego usaremos para añadir al HTML
+
+const addToProductsHTML = (arr) => {
+
 }
+
 
 // --------------
 
@@ -226,7 +225,7 @@ const searchButton = document.querySelector('#search-button')
 
 const onSearchButtonClicked = () => {
     filterProducts(products);
-    addFilteredToHTML(filteredArray);
+    addToProductsHTML(filteredArray);
 }
 
 searchButton.addEventListener('click', onSearchButtonClicked)
