@@ -212,6 +212,15 @@ console.log(filteredArray);
 
 //! Vamos a crear una función en la que introduzcamos un array de objectos y la función coja cada objecto, saque el HTML template y lo añada como texto a una variable que luego usaremos para añadir al HTML
 
+const readyToHTMLArray = [];
+const createProductTemplateOfEachProduct = (arr) => {
+    arr.forEach(product => {
+       let readyToHTMLProduct = getProductTemplate(product);
+       readyToHTMLArray.push(readyToHTMLProduct);
+       
+    });
+}
+
 const addToProductsHTML = (arr) => {
 
 }
