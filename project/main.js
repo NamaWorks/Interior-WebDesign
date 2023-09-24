@@ -148,6 +148,18 @@ const products = [
 
 // --------------
 
+//! Remove Duplicates
+let noDuplicatesList =[];
+const removeDuplicates = (arr) => {
+    // let unique = [];
+    arr.forEach(element => {
+        if (!noDuplicatesList.includes(element)) {
+            noDuplicatesList.push(element);
+        }
+    });
+    // console.log(noDuplicatesList)
+};
+
 //! Product template
 
 const getProductTemplate = (product) => {
@@ -186,44 +198,29 @@ addNewArrivalsToHTML(newArrivalsProducts);
 //! Product filter section
 
 const categorySelector = document.getElementById('select-category');
-
 const priceSelector = document.querySelector('#price-input');
-const priceSelection = priceSelector.value;
-
 const filteredProductsDiv = document.getElementById('filter-products');
 
-const filteredArray = [];
+const filteredArray = []; 
+
 const filterProducts = (arr) => {
     arr.forEach(product => {
-    //     if(product.price <= priceSelection && product.category === selectedCat){
-    //         filteredArray.push(product)
-    //     } else if(priceSelection >= product.price && selectedCat === "All Categories") {
-    //         filteredArray.push(product)
-    //     }
-    // })
-    console.log(categorySelector.value);
     if(product.category === categorySelector.value) {
         filteredArray.push(product)
     }
 })
-console.log(filteredArray);
+};
+filterProducts(products);
+removeDuplicates(filteredArray);
+
+
+//! -----------
+
+//Añadimos los elementos al HTMl
+const addProductsToHTMLProductsDiv = () => {
+               filteredProductsDiv.innerHTML = `${noDuplicatesList}`;
 }
 
-
-//! Vamos a crear una función en la que introduzcamos un array de objectos y la función coja cada objecto, saque el HTML template y lo añada como texto a una variable que luego usaremos para añadir al HTML
-
-const readyToHTMLArray = [];
-const createProductTemplateOfEachProduct = (arr) => {
-    arr.forEach(product => {
-       let readyToHTMLProduct = getProductTemplate(product);
-       readyToHTMLArray.push(readyToHTMLProduct);
-       
-    });
-}
-
-const addToProductsHTML = (arr) => {
-
-}
 
 
 // --------------
@@ -232,9 +229,13 @@ const addToProductsHTML = (arr) => {
 
 const searchButton = document.querySelector('#search-button')
 
-const onSearchButtonClicked = () => {
-    filterProducts(products);
-    addToProductsHTML(filteredArray);
-}
+//? Tenemos que conseguir que el elemento al ser clicado vuelva a revisar los filtros que hemos seleccionado
 
+const onSearchButtonClicked = () => {
+    console.log(categorySelector.value)
+    console.log(priceSelector.value)
+    console.log(noDuplicatesList);
+    addProductsToHTMLProductsDiv()
+
+}
 searchButton.addEventListener('click', onSearchButtonClicked)
