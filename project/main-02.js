@@ -146,21 +146,7 @@ const products = [
     },
 ];
 
-// --------------
-
-//! Remove Duplicates
-let noDuplicatesList =[];
-const removeDuplicates = (arr) => {
-    // let unique = [];
-    arr.forEach(element => {
-        if (!noDuplicatesList.includes(element)) {
-            noDuplicatesList.push(element);
-        }
-    });
-    // console.log(noDuplicatesList)
-};
-
-//! Product template
+//* PRODUCT TEMPLATE
 
 const getProductTemplate = (product) => {
     return `
@@ -175,67 +161,102 @@ const getProductTemplate = (product) => {
     </div>`
 }
 
-// --------------
+//* NEW ARRIVALS SECTION
 
-//! New Arrivals section
-
-const getNewArrivalsProducts = (arr) => {
-    const newArrivals = arr.slice((arr.length - 4), arr.length);
-    return newArrivals
-}
-const newArrivalsProducts = getNewArrivalsProducts(products);
-const addNewArrivalsToHTML = (arr) => {
-    for(i=0; i<arr.length; i++){
-    let product = arr[i];
-    let newArrivalsDiv = document.getElementById('new-arrivals-products');
-    newArrivalsDiv.innerHTML += getProductTemplate(product);
+const printNewArrivals = (arr) => {
+    let lastFourElementsAdded = arr.slice((arr.length - 4), arr.length);
+    let newArrivalsDiv = document.querySelector('#new-arrivals-products');
+    for(i = arr.length - 4; i<arr.length; i++){
+            let product = arr[i];
+            newArrivalsDiv.innerHTML += getProductTemplate(product)    
+        };
     }
-};
-addNewArrivalsToHTML(newArrivalsProducts);
+printNewArrivals(products)
 
-// --------------
-
-//! Product filter section
+//* PRODUCT FILTERS
 
 const categorySelector = document.getElementById('select-category');
-const priceSelector = document.querySelector('#price-input');
+const priceSelector = document.getElementById('price-input');
 const filteredProductsDiv = document.getElementById('filter-products');
 
-const filteredArray = []; 
+let filteredProducts = [];
 
-const filterProducts = (arr) => {
+const filterProductsByCategory = (arr) => {
     arr.forEach(product => {
-    if(product.category === categorySelector.value) {
-        filteredArray.push(product)
-    }
-})
-};
-filterProducts(products);
-removeDuplicates(filteredArray);
-
-
-//! -----------
-
-//Añadimos los elementos al HTMl
-const addProductsToHTMLProductsDiv = () => {
-               filteredProductsDiv.innerHTML = noDuplicatesList;
+        if(product.category === categorySelector.value || categorySelector.value === 'All Categories'){
+            filteredProducts.push(product);
+        }
+    });
+}
+const filterProductsByPrice = (arr) => {
+    arr.forEach(product => {
+        if([product.price <= priceSelector.value || priceSelector.value === 0]){
+            filteredProducts.push(product)
+        }
+    });
 }
 
+//* ADDINGS TO THE FILTER PART
 
+//!We need to prepare a function that restarts the filters once we change them in order to avoid accumulating different filter options previously chosen
 
-// --------------
+//Function to remove duplicates from an array. So if we click a few times, we don't have repeated elements
+let removeDuplicatesList = [];
+const removeDuplicates = (arr) => {
+    arr.forEach(element => {
+        if(!removeDuplicatesList.includes(element)){
+            removeDuplicatesList.push(element);
+        }
+    })
+}
 
-//! Search Button
+//Function to prepare the elements to be included in the HTML
+let HTMLReadyArrayOfProducts = [];
+const prepareElementsForHTML = (arr) => {
+    arr.forEach(product => {
+        let HTMLReadyProduct = getProductTemplate(product);
+        HTMLReadyArrayOfProducts.push(HTMLReadyProduct);
+    });
+    HTMLReadyArrayOfProducts = HTMLReadyArrayOfProducts.join("")
+}
 
-const searchButton = document.querySelector('#search-button')
+//Function to add elements to HTML
+const printFilteredProducts = (arr) => {
+    filteredProductsDiv.innerHTML = arr
+}
 
-//? Tenemos que conseguir que el elemento al ser clicado vuelva a revisar los filtros que hemos seleccionado
+//* SEARCH BUTTON
+
+const searchButton = document.querySelector('#search-button');
 
 const onSearchButtonClicked = () => {
-    console.log(categorySelector.value)
-    console.log(priceSelector.value)
-    console.log(noDuplicatesList);
-    addProductsToHTMLProductsDiv()
+    // location.replace('#products-filter')
+    // location.reload()
+
+
+    // console.log(categorySelector.value)
+    // console.log(priceSelector.value)
+
+    filterProductsByCategory(products)
+    // filterProductsByPrice(products)
+
+    removeDuplicates(filteredProducts)
+    // console.log(removeDuplicatesList)
+
+    prepareElementsForHTML(removeDuplicatesList)
+    // console.log(HTMLReadyArrayOfProducts)
+    printFilteredProducts(HTMLReadyArrayOfProducts)
 
 }
 searchButton.addEventListener('click', onSearchButtonClicked)
+
+//* CLEAR FILTERS BUTTON
+
+const clearFiltersButton = document.querySelector('#clear-filter');
+const onClearFiltersButtonClicked = () => {
+    categorySelector.value === 'All Categories';
+    priceSelector.value === ``;
+    
+};
+
+clearFiltersButton.addEventListener('click', onClearFiltersButtonClicked)
