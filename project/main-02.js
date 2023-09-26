@@ -230,9 +230,6 @@ const printFilteredProducts = (arr) => {
 const searchButton = document.querySelector('#search-button');
 
 const onSearchButtonClicked = () => {
-    // location.replace('#products-filter')
-    // location.reload()
-
 
     // console.log(categorySelector.value)
     // console.log(priceSelector.value)
@@ -251,12 +248,3 @@ const onSearchButtonClicked = () => {
 searchButton.addEventListener('click', onSearchButtonClicked)
 
 //* CLEAR FILTERS BUTTON
-
-const clearFiltersButton = document.querySelector('#clear-filter');
-const onClearFiltersButtonClicked = () => {
-    categorySelector.value === 'All Categories';
-    priceSelector.value === ``;
-    
-};
-
-clearFiltersButton.addEventListener('click', onClearFiltersButtonClicked)

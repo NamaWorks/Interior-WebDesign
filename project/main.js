@@ -146,19 +146,13 @@ const products = [
     },
 ];
 
-// --------------
+// Lo ideal es tener las imágenes en cloudinary
 
-//! Remove Duplicates
-let noDuplicatesList =[];
-const removeDuplicates = (arr) => {
-    // let unique = [];
-    arr.forEach(element => {
-        if (!noDuplicatesList.includes(element)) {
-            noDuplicatesList.push(element);
-        }
-    });
-    // console.log(noDuplicatesList)
-};
+// Revisar con lighthouse de chrome
+
+// Tendríamos que tener un código reactivo, es decir, que si metemos un producto con una categoría distinta a las existentes se añada al select
+
+// --------------
 
 //! Product template
 
@@ -184,10 +178,11 @@ const getNewArrivalsProducts = (arr) => {
     return newArrivals
 }
 const newArrivalsProducts = getNewArrivalsProducts(products);
+
 const addNewArrivalsToHTML = (arr) => {
+    const newArrivalsDiv = document.getElementById('new-arrivals-products');
     for(i=0; i<arr.length; i++){
     let product = arr[i];
-    let newArrivalsDiv = document.getElementById('new-arrivals-products');
     newArrivalsDiv.innerHTML += getProductTemplate(product);
     }
 };
@@ -198,44 +193,122 @@ addNewArrivalsToHTML(newArrivalsProducts);
 //! Product filter section
 
 const categorySelector = document.getElementById('select-category');
-const priceSelector = document.querySelector('#price-input');
+//Seleccionar el select del HTML
+
 const filteredProductsDiv = document.getElementById('filter-products');
+//Seleccionamos el div donde vamos a pintar los productos
 
-const filteredArray = []; 
+const priceSelector = document.querySelector('#price-input');
+//Seleccionamos el input del precio
 
-const filterProducts = (arr) => {
-    arr.forEach(product => {
-    if(product.category === categorySelector.value) {
-        filteredArray.push(product)
+const getMaximumValue = (arr) => {
+    let maximumValue = 0;
+    for(const product of arr){
+        //recorremos todos los productos del arr
+        if(product.price >= maximumValue) {
+            //Pregunto el precio del producto que estoy mirando y en caso de que sea mayor, asigno este valor al de mi maximumValue
+            maximumValue = product.price
+        }
+        return maximumValue
     }
-})
-};
-filterProducts(products);
-removeDuplicates(filteredArray);
-
-
-//! -----------
-
-//Añadimos los elementos al HTMl
-const addProductsToHTMLProductsDiv = () => {
-               filteredProductsDiv.innerHTML = noDuplicatesList;
 }
 
+const filterProducts = (arr) => {
+    //*Esta primera es la forma de hacerlo por cómo lo hacía yo (desplegar este código)
+    //!Al incluir el array aquí dentro lo que hacemos es resetear el array
+    let filteredArray = [];
+    arr.forEach(product => {
+        // console.log("Valor del select: " + categorySelector.value);
+        // console.log("Categoría del producto: " + product.category);
+        // console.log("Precio del producto: " + product.price);
+        // console.log("Valor del input: " + priceSelector.value);
+        if(
+            categorySelector.value === "All Categories" || product.category === categorySelector.value
+        ) {
+            if(priceSelector.value) {
+                if (product.price <= priceSelector.value){
+                    filteredArray.push(product)
+                }
+            } else {
+                filteredArray.push(product);
+            }
+        }
+    });
+    console.log(filteredArray)
 
+
+//!--------- OTRA FORMA DE HACERLO
+    // console.log("Valor del select: " + categorySelector.value);
+    // console.log("Valor del input: " + priceSelector.value);
+    // let maximumValue = getMaximumValue(arr)
+
+    // let filteredArray = arr.filter(
+    //   (product) =>
+    //     ((categorySelector.value === "All Categories" ||
+    //       product.category === categorySelector.value) &&
+    //       priceSelector.value <= priceSelector.value) ||
+    //     maximumValue
+    // );
+
+    addFilteredToHTML(filteredArray)
+    // console.log(filteredArray)
+    // console.log(maximumValue);
+};
+
+const addFilteredToHTML = (arr) => {
+    for(i=0; i<arr.length; i++){
+    let product = arr[i];
+    filteredProductsDiv.innerHTML += getProductTemplate(product);
+    }
+};
+
+const getAllCategories = (arr) => {
+    let categories = [];
+    categories.push('All Categories')
+    for (const product of arr) {
+        if(!categories.includes(product.category)){
+            categories.push(product.category);
+        }
+    }
+    // console.log(categories)
+    return categories
+}
+// getAllCategories(products)
+
+const printCategories = (categories) => {
+    for (const category of categories) {
+        categorySelector.innerHTML += 
+        `
+        <option value="${category}" class="filter-element">${category}</option>
+        `
+    }
+}
+
+printCategories(getAllCategories(products))
 
 // --------------
 
 //! Search Button
 
 const searchButton = document.querySelector('#search-button')
-
-//? Tenemos que conseguir que el elemento al ser clicado vuelva a revisar los filtros que hemos seleccionado
+//Seleccionamos el botón que me permite controlar cuando debo filtrar
 
 const onSearchButtonClicked = () => {
-    console.log(categorySelector.value)
-    console.log(priceSelector.value)
-    console.log(noDuplicatesList);
-    addProductsToHTMLProductsDiv()
-
+    filteredProductsDiv.innerHTML = "";
+    filterProducts(products);
 }
 searchButton.addEventListener('click', onSearchButtonClicked)
+
+//! CLEAR BUTTON
+
+const clearButton = document.querySelector('#clear-button');
+
+const clean = () => {
+    filteredProductsDiv.innerHTML = "";
+    categorySelector.value = "All Categories";
+    priceSelector.value = "";
+    // filteredProductsDiv.innerHTML = addFilteredToHTML(products);
+}
+clearButton.addEventListener('click', clean)
+
+// filteredProductsDiv.innerHTML = addFilteredToHTML(products);
