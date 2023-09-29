@@ -9,17 +9,16 @@ html {
 }
 
 ::selection {
-    background: #E7FF0F;
+    background: #e7ff0f;
     color: black;
 }
-
 
 :root {
     --cream: #f8f5f3;
     --black: #000000;
-    --dark-cream: #A89C93;
-    --lime: #E7FF0F;
-    --transition-time: .3s;
+    --dark-cream: #a89c93;
+    --lime: #e7ff0f;
+    --transition-time: 0.3s;
 }
 
 #header {
@@ -81,7 +80,6 @@ h1 {
     background-color: var(--lime);
     border: 1px solid black;
     color: black;
-
 }
 
 #main-claim-texts {
@@ -190,7 +188,6 @@ h2 {
     justify-content: space-between;
     gap: 5px;
     max-width: 75%;
-
 }
 
 a {
@@ -227,7 +224,7 @@ a {
     width: 100%;
     height: 0px;
     background-color: var(--lime);
-    transition: .5s cubic-bezier(0, .17, 0, 1);
+    transition: 0.5s cubic-bezier(0, 0.17, 0, 1);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -259,7 +256,7 @@ a {
 #select-category {
     background-color: transparent;
     border: 1px solid black;
-    padding: .8em;
+    padding: 0.8em;
 }
 
 #filter-menu {
@@ -294,7 +291,6 @@ a {
 .filter-button:hover {
     cursor: pointer;
     transform: translateY(-8px);
-
 }
 
 .filter-name {
@@ -369,7 +365,6 @@ a {
 
 #text-n-images {
     background-color: var(--cream);
-
 }
 
 #text-n-images>p {
@@ -393,7 +388,7 @@ a {
     height: 120px;
     object-fit: cover;
     border-radius: 150px;
-    transition: .5s cubic-bezier(.81, 0, .16, .98);
+    transition: 0.5s cubic-bezier(0.81, 0, 0.16, 0.98);
 }
 
 .p-span img:hover {
@@ -510,7 +505,7 @@ footer h3 {
     border-style: none;
     background-color: transparent;
     padding: 2%;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .subscribe-button:hover {
@@ -561,7 +556,6 @@ footer h3 {
 #privacy-terms {
     display: flex;
     flex-direction: row;
-
 }
 
 #privacy-terms a:hover {
@@ -576,12 +570,11 @@ footer h3 {
     margin-left: 20px;
 }
 
-
 /* 
 Aquí empiezan las media queries 
 */
 
-@media screen and (max-width:1600px) {
+@media screen and (max-width: 1600px) {
     #filter-products {
         padding: 30px;
         display: grid;
@@ -590,18 +583,13 @@ Aquí empiezan las media queries
     }
 }
 
-
-@media screen and (max-width:950px) {
-
+@media screen and (max-width: 1350px) {
     .sections {
         padding: 4%;
     }
 
-
-
     #main-claim {
         flex-direction: column;
-
     }
 
     #main-claim-texts {
@@ -623,20 +611,14 @@ Aquí empiezan las media queries
         font-size: 12px;
     }
 
-
-
     .principle-h3 {
         font-size: 25px;
     }
-
-
 
     #new-arrivals-products {
         flex-wrap: wrap;
         gap: 20px;
     }
-
-
 
     /* Products */
     #products-filter {
@@ -649,9 +631,8 @@ Aquí empiezan las media queries
         margin: 0;
         padding: 4%;
         display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-
+        justify-content: center;
+        align-items: center;
     }
 
     #price-filter input {
@@ -674,7 +655,6 @@ Aquí empiezan las media queries
         height: 280px;
     }
 
-
     #text-n-images>p {
         font-size: 45px;
         line-height: 80px;
@@ -683,8 +663,6 @@ Aquí empiezan las media queries
     .p-span img {
         height: 90px;
     }
-
-
 
     #footer-claim h3 {
         font-size: 30px;
@@ -706,12 +684,30 @@ Aquí empiezan las media queries
         width: 90%;
     }
 
+    #new-arrivals {
+        flex-direction: column;
+    }
+
+    #na-section-title {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #na-section-title p {
+        text-align: center;
+    }
+
+    #new-arrivals-products {
+        justify-content: center;
+        margin: 0;
+    }
 }
 
 /* Movil */
 
-@media screen and (max-width:480px) {
-
+@media screen and (max-width: 840px) {
     .sections {
         padding: 2%;
     }
@@ -737,9 +733,6 @@ Aquí empiezan las media queries
         padding: 10px 20px;
     }
 
-
-
-
     #section-principles {
         flex-direction: column;
         padding: 5%;
@@ -748,9 +741,6 @@ Aquí empiezan las media queries
     .principle-h3 {
         font-size: 30px;
     }
-
-
-
 
     #new-arrivals {
         flex-direction: column;
@@ -766,9 +756,6 @@ Aquí empiezan las media queries
     #na-section-title p {
         text-align: center;
     }
-
-
-
 
     #filter-menu {
         display: flex;
@@ -789,25 +776,25 @@ Aquí empiezan las media queries
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        align-self: center;
     }
 
     .product {
         margin-bottom: 80px;
-        width: 180px;
-        height: 230px;
+        width: 270px;
+        height: 345px;
     }
 
     .product-info {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
     }
 
     .product:hover .mascara {
-        height: 230px;
+        height: 100%;
     }
-
-
 
     #text-n-images>p {
         font-size: 35px;
@@ -818,9 +805,6 @@ Aquí empiezan las media queries
     .p-span {
         display: none;
     }
-
-
-
 
     #footer-links {
         flex-direction: column;
@@ -835,5 +819,23 @@ Aquí empiezan las media queries
         border-right: 0;
         border-bottom: solid 0.5px var(--dark-cream);
         padding-bottom: 30px;
+    }
+}
+
+/* smaller than mobile */
+
+@media screen and (max-width: 600px) {
+    #filter-products {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        align-self: center;
+    }
+
+    .product {
+        margin-bottom: 80px;
+        width: 100%;
+        height: 345px;
     }
 }
