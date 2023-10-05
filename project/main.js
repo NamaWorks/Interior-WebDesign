@@ -5,7 +5,7 @@ const products = [
     price: 30,
     category: 'Accessories for the room',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491276/.Interior%20Web%20Design/pexels-charlotte-may-5825576_fz2lgj.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494246/.Interior%20Web%20Design/pexels-charlotte-may-5825576_fz2lgj_noebax.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -13,7 +13,7 @@ const products = [
     price: 15,
     category: 'Accessories for the room',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491273/.Interior%20Web%20Design/pexels-karolina-grabowska-4207892_oelxhl.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494226/.Interior%20Web%20Design/pexels-karolina-grabowska-4207892_oelxhl_pk1n2w.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -21,7 +21,7 @@ const products = [
     price: 120,
     category: 'Accessories for the room',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491274/.Interior%20Web%20Design/pexels-rachel-claire-4825713_cwawhu.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494658/.Interior%20Web%20Design/pexels-rachel-claire-4825713_cwawhu_bb9ylr.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -29,7 +29,7 @@ const products = [
     price: 75,
     category: 'Accessories for the room',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491275/.Interior%20Web%20Design/pexels-vlada-karpovich-5357344_ismhas.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494251/.Interior%20Web%20Design/pexels-vlada-karpovich-5357344_ismhas_ugmvpa.jpg',
     link: 'https://www.google.com'
   },
   // Kitchen items
@@ -38,7 +38,7 @@ const products = [
     price: 275,
     category: 'Kitchen items',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491287/.Interior%20Web%20Design/pexels-blank-space-2647714_honesr.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494249/.Interior%20Web%20Design/pexels-blank-space-2647714_honesr_bhbef5.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -46,7 +46,7 @@ const products = [
     price: 1050,
     category: 'Kitchen items',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491166/.Interior%20Web%20Design/pexels-jonathan-borba-5570224_dqqj4v.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494237/.Interior%20Web%20Design/pexels-jonathan-borba-5570224_dqqj4v_lgkczj.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -54,7 +54,7 @@ const products = [
     price: 1320,
     category: 'Kitchen items',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491285/.Interior%20Web%20Design/pexels-medhat-ayad-447592_sevwb9.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494670/.Interior%20Web%20Design/pexels-medhat-ayad-447592_sevwb9_ksrxci.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -62,7 +62,7 @@ const products = [
     price: 1320,
     category: 'Kitchen items',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491286/.Interior%20Web%20Design/pexels-mister-mister-2442904_uahsci.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494668/.Interior%20Web%20Design/pexels-mister-mister-2442904_uahsci_nhnbnj.jpg',
     link: 'https://www.google.com'
   },
   // Minimal & modern chairs
@@ -71,7 +71,7 @@ const products = [
     price: 120,
     category: 'Minimal & modern chairs',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491294/.Interior%20Web%20Design/pexels-pixabay-533157_fwazln.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494665/.Interior%20Web%20Design/pexels-pixabay-533157_fwazln_ugsu7s.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -79,7 +79,7 @@ const products = [
     price: 360,
     category: 'Minimal & modern chairs',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491295/.Interior%20Web%20Design/pexels-rachel-claire-5490336_kqrd6i.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494660/.Interior%20Web%20Design/pexels-rachel-claire-5490336_kqrd6i_pvdfyt.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -87,7 +87,7 @@ const products = [
     price: 830,
     category: 'Minimal & modern chairs',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491297/.Interior%20Web%20Design/pexels-valeria-boltneva-827518_ojdj4r.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494652/.Interior%20Web%20Design/pexels-valeria-boltneva-827518_ojdj4r_rs5dox.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -95,7 +95,7 @@ const products = [
     price: 470,
     category: 'Minimal & modern chairs',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491292/.Interior%20Web%20Design/pexels-vecislavas-popa-1571463_bp2r3e.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494654/.Interior%20Web%20Design/pexels-vecislavas-popa-1571463_bp2r3e_cnzv73.jpg',
     link: 'https://www.google.com'
   },
   // Outdoor Decor
@@ -104,7 +104,7 @@ const products = [
     price: 1470,
     category: 'Outdoor decor',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491300/.Interior%20Web%20Design/pexels-jonathan-borba-3255245_fehuk6.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494235/.Interior%20Web%20Design/pexels-jonathan-borba-3255245_fehuk6_xlumxq.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -112,7 +112,7 @@ const products = [
     price: 2190,
     category: 'Outdoor decor',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491301/.Interior%20Web%20Design/pexels-ksenia-chernaya-3951746_i33mvu.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494229/.Interior%20Web%20Design/pexels-ksenia-chernaya-3951746_i33mvu_egmvbc.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -120,7 +120,7 @@ const products = [
     price: 830,
     category: 'Outdoor decor',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491302/.Interior%20Web%20Design/pexels-leeloo-thefirst-8210482_fvpmwn.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494223/.Interior%20Web%20Design/pexels-leeloo-thefirst-8210482_fvpmwn_qo9izp.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -128,7 +128,7 @@ const products = [
     price: 430,
     category: 'Outdoor decor',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491299/.Interior%20Web%20Design/pexels-rachel-claire-5490356_xh5rge.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494663/.Interior%20Web%20Design/pexels-rachel-claire-5490356_xh5rge_tq0ddb.jpg',
     link: 'https://www.google.com'
   },
   //Minimal & modern chairs
@@ -137,7 +137,7 @@ const products = [
     price: 430,
     category: 'Trendy sofa set',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491309/.Interior%20Web%20Design/pexels-charlotte-may-5824901_xccfhq.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494244/.Interior%20Web%20Design/pexels-charlotte-may-5824901_xccfhq_gyc3mu.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -145,7 +145,7 @@ const products = [
     price: 700,
     category: 'Trendy sofa set',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491310/.Interior%20Web%20Design/pexels-charlotte-may-5825720_jl3abv.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494240/.Interior%20Web%20Design/pexels-charlotte-may-5825720_jl3abv_rwk8el.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -153,7 +153,7 @@ const products = [
     price: 390,
     category: 'Trendy sofa set',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491306/.Interior%20Web%20Design/pexels-maksim-goncharenok-4352247_aaqui7.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494224/.Interior%20Web%20Design/pexels-maksim-goncharenok-4352247_aaqui7_auwkdu.jpg',
     link: 'https://www.google.com'
   },
   {
@@ -161,7 +161,7 @@ const products = [
     price: 660,
     category: 'Trendy sofa set',
     image:
-      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696491307/.Interior%20Web%20Design/pexels-shirin-olyaei-2986011_oqx0ad.jpg',
+      'https://res.cloudinary.com/dgrhbsilh/image/upload/v1696494656/.Interior%20Web%20Design/pexels-shirin-olyaei-2986011_oqx0ad_jctyyk.jpg',
     link: 'https://www.google.com'
   }
 ]
@@ -234,7 +234,7 @@ const getMaximumValue = (arr) => {
 }
 
 const filterProducts = (arr) => {
-  //*Esta primera es la forma de hacerlo por cómo lo hacía yo (desplegar este código)
+  //*Esta primera es la forma de hacerlo
   //!Al incluir el array aquí dentro lo que hacemos es resetear el array
   let filteredArray = []
   arr.forEach((product) => {
@@ -331,5 +331,21 @@ const clean = () => {
 }
 clearButton.addEventListener('click', clean)
 onSearchButtonClicked()
-
 // filteredProductsDiv.innerHTML = addFilteredToHTML(products);
+
+// Aquí añadimos los links de google para fuentes y eso para que los cargue justo al cargar el HTML
+const htmlHead = document.querySelector('head')
+const addLinksToHead = () => {
+  htmlHead.innerHTML += `
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,600&display=swap"
+      rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+  `
+}
+
+addLinksToHead()
