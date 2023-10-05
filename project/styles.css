@@ -623,6 +623,8 @@ Aquí empiezan las media queries
     /* Products */
     #products-filter {
         flex-direction: column;
+        align-content: center;
+        justify-content: center;
         padding-right: 0;
     }
 
@@ -641,6 +643,7 @@ Aquí empiezan las media queries
 
     #filter-products {
         padding: 30px;
+        align-self: center;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 50px;
